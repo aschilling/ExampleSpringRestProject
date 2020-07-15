@@ -24,7 +24,7 @@ public class GreetingRestControllerImpl implements GreetingRestController {
     @Override
     @GetMapping
     @Operation(summary = "Returns an adjusted greeting")
-    public String getGreeting(@RequestParam(value = "lang",defaultValue = "fr") @Parameter(description = "The prefered language for which the wellcome message will be adopted.") String lang){
+    public String getGreeting(@RequestParam(value = "lang",defaultValue = "de") @Parameter(description = "The prefered language for which the wellcome message will be adopted.") String lang){
         return this.greetingService.getGreeting(lang);
     }
 
