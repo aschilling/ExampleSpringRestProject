@@ -1,0 +1,16 @@
+1. Grundlagen
+1.1 Ausgangslage
+1.2 Vorteile
+1.3 Herausforderungen
+2. Virtualisierung
+2.1 Virtualisierungstechniken
+2.2 Dienstleistungsmodell
+2.3 Bereitstellungsmodell
+3. Docker
+3.1 Docker Container
+3.2 Docker Images
+3.3 Best Practices
+4. Q&A
+4.1 Beantwortung Fragen aus dem Forum
+4.2 Beantwortung Fragen aus dem Plenum
+5. Probeklausur
