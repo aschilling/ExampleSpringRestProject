@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.stream.Collectors;
 
 @Service
@@ -13,11 +14,25 @@ public class GreetingServiceImpl implements GreetingService {
     @Value("${demo.version:0.0.1}")
     private String version;
 
-    @Value("${demo.de.overview.file:gliederung_test.txt}")
+    @Value("${de_overview_file:gliederung_test.txt}")
     private String de_overview_file;
+
+    @Value("${supported_languages}")
+    private String[] supported_lang;
+
+    @Value("${Spring.profiles.active:dev}")
+    private String active_profile;
 
     @Override
     public String getGreeting(String lang){
+        //Überprüfung ob es sich um die Entwicklungsumgebung handelt, falls ja keine Einschränkung
+        if (active_profile != "dev") {
+            //Überprüfung ob die übergebene Sprache eine der Unterstützten ist, falls nein Verwendung des Sprachcodes
+            // 'xx' um in den Defaultblock zu kommen
+            if (!Arrays.asList(supported_lang).contains(lang)) {
+                lang = "xx";
+            }
+        }
         String returnSmt;
         switch (lang){
             case "de":

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public interface GreetingRestController {
     @GetMapping
-    String getGreeting(@RequestParam(defaultValue = "en") String lang, @RequestHeader(value = "username") String username);
+    String getGreeting(@RequestParam(defaultValue = "en") String lang, @RequestHeader(value = "username") String username, @RequestHeader(value = "apikey") String apikey);
 
     @GetMapping("/version")
     String getVersion();
